@@ -12,7 +12,7 @@ The module accepts an sqlalchemy Base class as the argument, then parses this cl
 
 Explicit configuration will prevent implicit configuration being generated for that column - so you need to specify all configuration options explicitly.
 
-The returned dictionary should be converted to a json hash (using `json` or equivalrnt module) to use in the javascript in your template. (Note that you may need to prevent escaping or filtering in your template).
+The returned dictionary should be converted to a json hash (using `json` or equivalent module) to use in the javascript in your template. (Note that you may need to prevent escaping or filtering in your template).
 
 ## Simple Example
 
@@ -101,8 +101,9 @@ def myform(request):
 % for field in form:
   ${field.label}: ${field}
   <br/>
-</form>
 % endfor
+</form>
+
 ```
 
 This will generate the following rules dictionary:
