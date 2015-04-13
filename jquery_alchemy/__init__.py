@@ -31,7 +31,6 @@ def jquery_alchemy(cls):
     cls = inspect(cls)
     rules = {'rules': {}}
     for prop in cls.attrs:
-        rules['rules'][prop.key] = {}
         # Always a 1-item list?
         column = prop.columns[0]
 
