@@ -23,6 +23,7 @@ Note the explicit configuration specified for the `uid` field - the others will 
 ```python
 # models.py
 
+# Import the appropriate method from the module
 from jquery_alchemy import jquery_alchemy
 
 from sqlalchemy import (
@@ -47,7 +48,7 @@ class User(Base):
                    unique=True,
                    nullable=False,)
     uid = Column(Integer(8),
-                 info={'jquery_validate':{'required': True,
+                 info={'jquery_validate':{'required': True, #  explicit config
                                           'minlength': 8,
                                           'number': True}},)
 
@@ -57,6 +58,7 @@ class UserForm(ModelForm):
 
     submit = SubmitField('Submit')
 
+# Populate the 'rules' dictionary
 jquery_rules = jquery_alchemy(User)
 
 ```
@@ -65,6 +67,8 @@ jquery_rules = jquery_alchemy(User)
 # views.py
 
 import json
+
+# Import the rules dictionary from models
 from .models import (
     User,
     jquery_rules
@@ -78,6 +82,7 @@ def myform(request):
         form.populate_obj(user)
         DBSession.add(user)
         return HTTPFound(location=request.route_url('home'))
+    # Pass a json dump of the rules dictionary to the template
     return {'form':form, 'rules_json': json.dumps(jquery_rules)}
 
 ```
@@ -87,6 +92,7 @@ def myform(request):
 
 <script type="text/javascript">
   $().ready(function() {
+    ## Use the (un-escaped) json rules dictionary
     $("#myform").validate(${rules_json|n});
   });
 </script>
