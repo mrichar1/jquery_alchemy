@@ -6,15 +6,15 @@ such as wtforms_alchemy, deform (colander_alchemy) or formalchemy."""
 
 import json
 from sqlalchemy import (
-Boolean,
-Float,
-inspect,
-Integer,
-Numeric,
-String,
-Text,
-Time,
-)
+    Boolean,
+    Float,
+    inspect,
+    Integer,
+    Numeric,
+    String,
+    Text,
+    Time,
+    )
 
 from sqlalchemy_utils import (
     EmailType,
@@ -74,7 +74,6 @@ class BuildRules(object):
                     column.info['jquery_validate']['url'] = True
 
                 self.rules['rules'][prop.key] = column.info['jquery_validate']
-
 
     def json(self):
         """Return a JSON-formatted string representation of the rules dict."""
