@@ -2,7 +2,7 @@
 
 `jquery_alchemy` is a python module which (automatically) creates client-side validation rules for the [jQuery Validation Plugin](http://jqueryvalidation.org/) from [SQLAlchemy](http://www.sqlalchemy.org/) columns, based on their data types.
 
-It is designed to work with web frameworks which use templates, such as [Pyramid](http://www.pylonsproject.org/) in conjunction with orm form-generation modules, such as [wtforms_alchemy](https://wtforms-alchemy.readthedocs.org/en/latest/), [deform colander alchemy)](https://colanderalchemy.readthedocs.org/en/latest/) or [formalchemy](http://docs.formalchemy.org/) (though it can work equally well without these).
+It is designed to work with web frameworks which use templates, such as [Pyramid](http://www.pylonsproject.org/) in conjunction with orm form-generation modules, such as [wtforms_alchemy](https://wtforms-alchemy.readthedocs.org/en/latest/), [deform (colander alchemy)](https://colanderalchemy.readthedocs.org/en/latest/) or [formalchemy](http://docs.formalchemy.org/) (though it can work equally well without these).
 
 This is very much a work-in-progress - it currently maps from many of the 'simple' data types, and provides validation for required (i.e. non-empty) fields and field length.  However there are many more mappings which could be done between sqlalchemy column types and jquery validation types... patches welcome!
 
