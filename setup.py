@@ -23,7 +23,7 @@ def get_git_version():
                              stdout=subprocess.PIPE)
         return p.communicate()[0].split('\n')[0].strip()
     except Exception as e:
-        print e
+        print(e)
         return None
 
 
