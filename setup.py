@@ -6,6 +6,7 @@ pkg_url = 'http://www.github.com/mrichar1/jquery_alchemy'
 pkg_license = 'GNU AGPL v3'
 pkg_description = 'A package which creates jquery_validation rules from sqlalchemy columns for use with web forms.'
 pkg_author = 'Matthew Richardson.'
+pkg_author_email = 'm.richardson@ed.ac.uk'
 
 pkg_classifiers = [
             'Development Status :: 4 - Beta',
@@ -37,6 +38,7 @@ def main():
         description=pkg_description,
         classifiers=pkg_classifiers,
         author=pkg_author,
+	author_email=pkg_author_email,
         packages=setuptools.find_packages(),
         include_package_data=True,
         package_data={'': ['LICENSE']},
